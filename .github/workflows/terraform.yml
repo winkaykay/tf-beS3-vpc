@@ -51,6 +51,13 @@ jobs:
     # Checks that all Terraform configuration files adhere to a canonical format
     - name: Terraform Format
       run: terraform fmt -check
+
+    # Validate that all Terraform configuration files 
+    - name: Terraform Validate
+      id: validate
+      # Run even if formatting fails
+      if: success() || failure()
+      run: terraform validate -no-color
     
     # To run plan and vpc with static IAM credentials in repository secrets 
     - name: Configure AWS Credentials for Resource
@@ -62,9 +69,15 @@ jobs:
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan 
+      id: plan
       run: terraform plan -input=false
+
+    # if terraform plan fails exist the flow
+    - name: Terraform Plan Status
+      if: steps.plan.outcome == 'failure'
+      run: exit 1 
       
-      # On push to "main", build or change infrastructure according to Terraform configuration files
+    # On push to "main", build or change infrastructure according to Terraform configuration files
     - name: Terraform Apply
       if: github.ref == 'refs/heads/"main"' && github.event_name == 'push'
       run: terraform apply -auto-approve -input=false
