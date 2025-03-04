@@ -31,11 +31,15 @@
    -  Go to your Repository → Action -> New workflow 
    ![image](https://github.com/user-attachments/assets/d145feb1-5b3b-4ae2-aa93-80c939df0a93)
 
-4. Paste the content of terraform.yaml
+5. Paste the content of terraform.yaml
 
 ### Triggering Workflow ###
 1. Git push to main branch
 2. Pull Request to main branch
+![image](https://github.com/user-attachments/assets/1e7aec7c-db76-4050-aad3-a3dcbff1a7af)
 
-   
+### Workflow Steps ###
+
+   ![image](https://github.com/user-attachments/assets/0bd5c6e2-ca07-42ca-b65b-cc574fd72766)
+
 
