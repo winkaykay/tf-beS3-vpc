@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket       = "hellocloud-master-terraform-state"
+    bucket       = "wkk-tfstate-bucket"
     key          = "prod/terraform.tfstate"
     region       = "ap-southeast-1"
     encrypt      = true
