@@ -7,7 +7,7 @@ resource "aws_vpc" "hello_vpc" {
   tags = {
     Name = "hellocloud_vpc1"
   }
-
+//this is test
 }
 
 # resource "aws_vpc" "hello_vpc2" {
