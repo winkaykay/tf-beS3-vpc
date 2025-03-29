@@ -7,9 +7,9 @@ resource "aws_vpc" "hello_vpc" {
   tags = {
     Name = "hellocloud_vpc1"
   }
-# this is test
-}
 
+}
+# this is test
 # resource "aws_vpc" "hello_vpc2" {
 
 #   cidr_block           = "172.31.0.0/16"
