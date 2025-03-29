@@ -9,7 +9,7 @@ resource "aws_vpc" "hello_vpc" {
   }
 
 }
-
+# this is test
 # resource "aws_vpc" "hello_vpc2" {
 
 #   cidr_block           = "172.31.0.0/16"
